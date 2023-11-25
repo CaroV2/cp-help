@@ -1,16 +1,24 @@
+import { Thing } from "./thing";
+
 export type Observer = { render: () => void } & HTMLElement;
 
 export type AppState = {
-  something: {};
+  thing: Thing[];
 };
 
 export enum SomeActions {
-  "X" = "X",
+  "SAVE_THING" = "SAVE_THING",
+  "GET_THING" = "GET_THING"
 }
 
-export interface XAction {
-  action: SomeActions.X;
-  payload: Pick<AppState, "something">;
+export interface saveThingAction {
+  action: SomeActions.SAVE_THING;
+  payload: Thing;
 }
 
-export type Actions = XAction;
+export interface getThingAction {
+  action: SomeActions.GET_THING;
+  payload: Thing;
+}
+
+export type Actions = saveThingAction | getThingAction;

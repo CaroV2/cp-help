@@ -11,8 +11,8 @@ class AppContainer extends HTMLElement {
     }
 
     render() {
-        const something = this.ownerDocument.createElement('div');
-        this.shadowRoot?.appendChild(something);
+        const form = this.ownerDocument.createElement('my-form');
+        this.shadowRoot?.appendChild(form);
     }
 }
 
